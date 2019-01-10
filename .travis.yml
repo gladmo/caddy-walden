@@ -1,0 +1,13 @@
+services:
+  - docker
+
+before_install:
+  - echo ${DOCKER_REGISTRY}
+
+deploy:
+  provider: script
+  script: bash docker-push.sh
+  on:
+    branch: master
+
+script: docker build -t ${DOCKER_REGISTRY} .

@@ -1,0 +1,15 @@
+0.0.0.0
+
+log / /app/logs/access.log "{combined} {mitm}" {
+	rotate_size 100
+	rotate_age  30
+	rotate_keep 100
+	rotate_compress
+}
+
+errors /app/logs/error.log {
+	rotate_size 100
+	rotate_age  30
+	rotate_keep 100
+	rotate_compress
+}
